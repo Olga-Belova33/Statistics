@@ -17,4 +17,25 @@ class StatsServiceTest {
     }
 
 
+
+    @Test
+    public void testAverage() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+        long actual = service.average(sales);
+        long expected = 15;
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void testcalcMounthMax() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+        long actual = service.mounthMaxSale(sales);
+        long expected = 8;
+        Assertions.assertEquals(expected, actual);
+    }
 }
