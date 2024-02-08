@@ -29,6 +29,41 @@ public class StatsService {
         return mounhtMax + 1;
     }
 
+
+    public int mounthMinSale(long[] sales) {
+        int mounhtMax = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[mounhtMax] >= sales[i]) {
+                mounhtMax = i;
+            }
+        }
+        return mounhtMax + 1;
+    }
+
+
+    public int mounthsBelowAverage(long[] sales) {
+
+        int quantity = 0;
+        long averageSale = average(sales);
+        for (long sale : sales) {
+            if (sale < averageSale) {
+                quantity = quantity + 1;
+            }
+        }
+        return quantity;
+    }
+
+    public int mounthsAboveAverage(long[] sales) {
+
+        int quantity = 0;
+        long averageSale = average(sales);
+        for (long sale : sales) {
+            if (sale > averageSale) {
+                quantity = quantity + 1;
+            }
+        }
+        return quantity;
+    }
 }
 
 

@@ -38,4 +38,34 @@ class StatsServiceTest {
         long expected = 8;
         Assertions.assertEquals(expected, actual);
     }
+
+    @Test
+    public void testcalcMounthMin() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+        long actual = service.mounthMinSale(sales);
+        long expected = 9;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testcalcMounthsBelowAverage() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+        long actual = service.mounthsBelowAverage(sales);
+        long expected = 5;
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testcalcMounthsAboveAverage() {
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        StatsService service = new StatsService();
+
+        long actual = service.mounthsAboveAverage(sales);
+        long expected = 5;
+        Assertions.assertEquals(expected, actual);
+    }
 }
